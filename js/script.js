@@ -1,5 +1,6 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+  firma();
   // Header scroll effect
   const header = document.querySelector("header");
 
@@ -314,18 +315,59 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function shareWhatsApp() {
-  const url = encodeURIComponent("https://tu-sitio-web.com");
+  const url = encodeURIComponent("https://bellsmonrot.github.io/");
   const text = encodeURIComponent(
-    "Descubre tu destino con BellsmonRot - Adivinación y Tarot."
+    "🔮 Descubre tu destino con BellsmonRot - Adivinación y Tarot.🎃💀"
   );
   window.open(`https://api.whatsapp.com/send?text=${text}%20${url}`, "_blank");
 }
 
 function shareFacebook() {
-  const url = encodeURIComponent("https://tu-sitio-web.com");
+  const url = encodeURIComponent("https://bellsmonrot.github.io/");
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
 }
 
+document.addEventListener('copy', (event) => {
+  event.preventDefault(); // Evita la acción de copiar
+  const customText = 'Bellsmonrot Tarot 🎃🔮💀 ➡️ https://bellsmonrot.github.io/';
+  if (event.clipboardData) {
+    event.clipboardData.setData('text/plain', customText);
+  } else if (window.clipboardData) {
+    window.clipboardData.setData('Text', customText);
+  }
+  alert('No se permite copiar contenido de esta página.');
+});
+
+// Opcional: Desactivar el menú contextual (botón derecho)
+emailjs.init('cv7FuUnPNFET-S02I');
+
+function sendEmail(e) {
+  e.preventDefault();
+  
+  emailjs.sendForm('service_5dje1mm', 'template_suq0w3c', e.target)
+    .then(() => {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Mensaje enviado!',
+        text: 'Gracias por contactarnos. Te responderemos pronto.',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Aceptar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "#banner";
+          e.target.reset();
+        }
+      });
+    }, (error) => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se pudo enviar el mensaje. Por favor intenta nuevamente.',
+        confirmButtonColor: '#d33',
+        confirmButtonText: 'Cerrar'
+      });
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => { 
   const frontImage = document.querySelector('.tarot-front');
@@ -335,9 +377,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const images = [
       './img/tarot/fooltarot.jpg',
       './img/tarot/magiciantarot.jpg',
-      './img/tarot/empresstarot.jpg', // Aseguramos que esta sea parte del array
+      './img/tarot/empresstarot.jpg',
       './img/tarot/emperortarot.jpg',
-      './img/tarot/hierophanttarot.jpg'
+      './img/tarot/hierophanttarot.jpg',
+      './img/tarot/loverstarot.jpg',
+      './img/tarot/carrotarot.jpg',
+      './img/tarot/fuerzatarot.jpg',
+      './img/tarot/ermitanotarot.jpg'
   ];
 
   function changeImage() {
@@ -393,3 +439,34 @@ tarotContainer.addEventListener('mouseleave', () => {
     tarotCard.style.boxShadow = 'none'; // Elimina el reflejo cuando el ratón sale
 });
 
+function firma() {
+  console.log("%c Bienvenid@ a mi pagina", "background: #ff8906; border-radius:12%;color:#fffffe;padding: 2em;font-size: 2em;");
+  console.log("%c No olvides seguirme en redes:", "color:#e53170;padding: 1.5em;font-size: 1.5em;"); 
+  console.log("%c Instagram: https://www.instagram.com/rodrigosendinosanz/", "color:#405DE6;padding: 1em;font-size: 1em;background: #fff;");
+  console.log("%c Twitter: https://twitter.com/rodrigosendino", "color:#1DA1F2;padding: 1em;font-size: 1em;background: #fff;");
+  console.log("%c Linkedin: https://www.linkedin.com/in/rodrigo-sendino-sanz-27a3a0100/", "color:#0e76a8;padding: 1em;font-size: 1em;background: #fff;");
+  console.log("%c Github: https://github.com/RodrigoSendinoSanz", "color:#211F1F;padding: 1em;font-size: 1em;background: #fff;");
+  console.log("%c by Rodrigo Sendino Sanz", "color:gold;padding: 1em;font-size: 1.5em;");
+  console.log("%c                     @@@@@@@                     ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c             @...@@           @@...@             ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c        @..@                       @..@         ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c     @..        @..@    /.@   @@..@      ..@      ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c   @.@     @.@         /.@         *.#    @.@    ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c  .@    ,.@            /.@            .@    (.   ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c  %..@ .@              /.@              .@   @.@ ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c       @...@           /.@               @@   @.@","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c           @....%      /.@                .@   @.","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c               &....@  /.&                 .    .","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c@.... (.............@ @...*    ..............  ...","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c@.    @&                /./....%                  ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c .@    .                /./   &....@              ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c @.     .               /./        @...@          ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c  @.&    .@             /./            @..@       ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c    .@     .@           /./            .@  @...   ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c     @.@     @.@        /./         ..     @.@    ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c       @./       @..@@  /./   @...@      ..@      ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c          @..@                       @..@         ","color:gold;padding: -1em;font-size: 1.5em;");
+  console.log("%c              @...@#           @@...@             ","color:gold;padding: -1em;font-size: 1.5em;");
+
+
+}

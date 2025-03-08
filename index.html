@@ -13,19 +13,21 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
     <script src="./js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Meta etiquetas para redes sociales -->
     <meta property="og:title" content="BellsmonRot - Adivinación y Tarot">
     <meta property="og:description"
-        content="Descubre tu destino a través del arte antiguo de la adivinación. Consulta de tarot, astrología y más.">
+        content="🔮 Descubre tu destino a través del arte antiguo de la adivinación. 🔮 Consulta de tarot, astrología y más.">
     <meta property="og:image" content="./img/logo.png?height=400&width=300">
-    <meta property="og:url" content="https://tu-sitio-web.com">
+    <meta property="og:url" content="https://bellsmonrot.github.io/">
     <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="art-nouveau-page">
+<body class="artdeco">
     <!-- Navegación -->
-    <header class="art-nouveau-header">
+    <header class="artdeco">
         <div class="container">
-            <a href="#" class="logo-link">
+            <a href="https://bellsmonrot.github.io/" class="logo-link">
                 <div class="logo">
                     <img src="./img/logo.png" alt="Logo Vsta" class="logo-img">
                     <div class="header-logo-wrapper">
@@ -54,7 +56,7 @@
     </header>
 
     <!-- Sección Principal -->
-    <section class="hero">
+    <section class="hero artdeco">
         <div class="container">
             <div class="hero-content">
                 <span class="free-question">HAZ UNA PREGUNTA GRATIS</span>
@@ -74,7 +76,7 @@
     </section>
 
     <!-- Sección de Servicios -->
-    <section class="services">
+    <section class="services artdeco">
         <div class="container">
             <div class="service-cards">
                 <div class="service-card">
@@ -109,7 +111,7 @@
     </section>
 
     <!-- Sección de Transformación con el Tarot -->
-    <section class="transformation">
+    <section class="transformation artdeco">
         <div class="container">
             <div class="transformation-image">
                 <div class="image-container">
@@ -131,7 +133,7 @@
     </section>
 
     <!-- Sección de Productos -->
-    <section class="products" id="products">
+    <section class="products artdeco" id="products">
         <div class="container">
             <span class="our-products">NUESTROS SERVICIOS</span>
             <h2>Bienvenido a nuestra tienda mística en línea</h2>
@@ -213,7 +215,7 @@
     </section>
 
     <!-- Sección de Testimonios -->
-    <section class="testimonials">
+    <section class="testimonials artdeco">
         <div class="container">
             <div class="testimonial-header">
                 <span class="testimonial-icon">✦</span>
@@ -276,7 +278,7 @@
 
 
     <!-- Sección Aprender Tarot -->
-    <section class="learn-tarot">
+    <section class="learn-tarot artdeco">
         <div class="container">
             <div class="learn-tarot-content">
                 <div class="learn-tarot-image">
@@ -304,7 +306,7 @@
     </section>
 
     <!-- Sección de Misterios -->
-    <section class="mysteries">
+    <section class="mysteries artdeco">
         <div class="container">
             <span class="about-cards">SOBRE LAS CARTAS</span>
             <h2>Descubre los misterios del universo</h2>
@@ -379,7 +381,7 @@
 
 
     <!-- Sección de Preguntas Frecuentes -->
-    <section class="faq-section">
+    <section class="faq-section artdeco">
         <div class="container">
             <span class="faq-label">PREGUNTAS FRECUENTES</span>
             <h2>Preguntas frecuentes sobre el tarot</h2>
@@ -412,13 +414,13 @@
 
 
     <!-- Sección de Contacto -->
-    <section class="contact-section" id="contact">
+    <section class="contact-section artdeco" id="contact">
         <div class="container">
             <div class="title">
                 <h2>Contáctanos</h2>
                 <p>Contacta conmigo para cualquier duda o consulta.</p>
             </div>
-            <form class="contactForm" id="contactForm" action="#banner">
+            <form class="contactForm" id="contactForm" onsubmit="sendEmail(event)">
                 <div class="row">
                     <label for="nombre">
                         <input type="text" name="name" placeholder="Nombre" required="">
@@ -455,7 +457,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="artdeco">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
