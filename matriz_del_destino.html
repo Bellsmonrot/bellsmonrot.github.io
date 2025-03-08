@@ -7,30 +7,26 @@
     <title>BellsmonRot - Adivinación y Tarot</title>
     <link rel="icon" type="image/vnd.icon" href="./img/favicon/favicon.ico">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
     <script src="./js/script.js" defer></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Meta etiquetas para redes sociales -->
     <meta property="og:title" content="BellsmonRot - Adivinación y Tarot">
     <meta property="og:description"
-        content="Descubre tu destino a través del arte antiguo de la adivinación. Consulta de tarot, astrología y más.">
+        content="🔮 Descubre tu destino a través del arte antiguo de la adivinación. 🔮 Consulta de tarot, astrología y más.">
     <meta property="og:image" content="./img/logo.png?height=400&width=300">
-    <meta property="og:url" content="https://tu-sitio-web.com">
+    <meta property="og:url" content="https://bellsmonrot.github.io/">
     <meta name="twitter:card" content="summary_large_image">
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    />
 </head>
 <body>
-    <header>
+    <header class="artdeco">
         <div class="container">
-            <a href="#" class="logo-link">
+            <a href="https://bellsmonrot.github.io/" class="logo-link">
                 <div class="logo">
                     <img src="./img/logo.png" alt="Logo Vsta" class="logo-img">
                     <div class="header-logo-wrapper">
@@ -42,8 +38,8 @@
             <div class="nav-and-buy">
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="#contact">Contáctanos</a></li>
-                        <li><a href="#products">Tienda</a></li>
+                        <li><a href="https://bellsmonrot.github.io/#contact">Contáctanos</a></li>
+                        <li><a href="https://bellsmonrot.github.io/#products">Tienda</a></li>
                     </ul>
                 </nav>
             </div>
@@ -55,7 +51,7 @@
         </div>
     </header>
 
-    <div class="container-matriz">
+    <div class="container-matriz artdeco">
         <h1 class="title">Calcula tu Matriz del Destino</h1>
         <label for="fechaNacimiento" class="subtitle">Introduce tu fecha de nacimiento:</label>
         <input type="date" id="fechaNacimiento" value="2000-01-01"> <!-- Fecha por defecto -->
@@ -123,7 +119,7 @@
         </div>
     </div>
 
-    <div class="container-flex-colm">
+    <div class="container-flex-colm artdeco">
         <div class="container-left-up">
           <div id="edadCalculada" class="result"></div>
           <div id="horaActual" class="result"></div>
@@ -152,7 +148,7 @@
         </div>
       </div>
     <!-- Footer -->
-    <footer>
+    <footer class="artdeco">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
