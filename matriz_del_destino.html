@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BellsmonRot - Adivinación y Tarot</title>
+    <link rel="icon" type="image/vnd.icon" href="./img/favicon/favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <script src="./js/script.js" defer></script>
+
+    <!-- Meta etiquetas para redes sociales -->
+    <meta property="og:title" content="BellsmonRot - Adivinación y Tarot">
+    <meta property="og:description"
+        content="Descubre tu destino a través del arte antiguo de la adivinación. Consulta de tarot, astrología y más.">
+    <meta property="og:image" content="./img/logo.png?height=400&width=300">
+    <meta property="og:url" content="https://tu-sitio-web.com">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo-link">
+                <div class="logo">
+                    <img src="./img/logo.png" alt="Logo Vsta" class="logo-img">
+                    <div class="header-logo-wrapper">
+                        <span class="free-question">BellsmonRot</span>
+                        <p>Descubre tu destino a través del arte antiguo de la adivinación.</p>
+                    </div>
+                </div>
+            </a>
+            <div class="nav-and-buy">
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#contact">Contáctanos</a></li>
+                        <li><a href="#products">Tienda</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-matriz">
+        <h1 class="title">Calcula tu Matriz del Destino</h1>
+        <label for="fechaNacimiento" class="subtitle">Introduce tu fecha de nacimiento:</label>
+        <input type="date" id="fechaNacimiento" value="2000-01-01"> <!-- Fecha por defecto -->
+        <a class="btn-primary" onclick="calcularMatriz()">Calcular Matriz</a>
+        <div class="flex-wrapper">
+            <!-- Contenedor para mostrar la matriz del destino -->
+            <div id="resultadoMatriz" class="result-container"></div>
+            <!-- Contenedor para mostrar la matriz del destino -->
+            <div id="resultadoInfo" class="result-info">
+                <div class="dropdown dd-Centro">
+                    <span>Centro</span>
+                    <div class="dropdown-content">
+                        <p>Representa nuestra alma y lo que ella quiere trabajar y experimentar en esta vida para su evolución</p>
+                    </div>
+                </div>
+                <div class="dropdown dd-Personaje">
+                    <span>Personaje</span>
+                    <div class="dropdown-content">
+                        <p>Como nos ven o perciben las otras personas</p>
+                    </div>
+                </div>
+                <div class="dropdown dd-Relfamilia">
+                    <span>Relación padres e hijos</span>
+                    <div class="dropdown-content">
+                        <p>Relacion con nuestros progenitores</p>
+                    </div>
+                </div>
+                <div class="dropdown dd-Talentos">
+                    <span>Talentos</span>
+                    <div class="dropdown-content">
+                        <p>Tus talentos</p>
+                    </div>
+                </div>
+                <div class="dropdown dd-Karmapasvida">
+                    <span>Karma de vidas pasadas</span>
+                    <div class="dropdown-content">
+                        <p>Karma que arrastramos de vidas pasadas</p>
+                    </div>
+                </div>
+                <div class="dropdown dd-Karmamaterial">
+                    <span>Karma material</span>
+                    <div class="dropdown-content">
+                        <p>Lo que hacíamos en otras vidas pasadas para vivir, nuestra relación con el dinero, pensamientos limitantes de prosperidad, ingresos como hobby</p>
+                    </div>
+                </div>
+                <div class="dropdown dd-DirPar">
+                    <span>Relación dinero/pareja</span>
+                    <div class="dropdown-content">
+                        <p>Como el dinero y la pareja afecta o bloquea al otro, nos da pista de como podría ser nuestra futura pareja o lugares donde os podríais conocer, estando solteros y actividades para ganar dinero</p>
+                    </div>
+                </div>
+                <div class="dropdown dd-LinPat">
+                    <span>Linaje Paterno</span>
+                    <div class="dropdown-content">
+                        <p>Parte superior tareas pendientes y la parte inferior karma de salud</p>
+                    </div>
+                </div>
+                <div class="dropdown dd-LinMat">
+                    <span>Linaje Materno</span>
+                    <div class="dropdown-content">
+                        <p>Parte superior tareas pendientes y la parte inferior karma de salud</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-flex-colm">
+        <div class="container-left-up">
+          <div id="edadCalculada" class="result"></div>
+          <div id="horaActual" class="result"></div>
+          <div id="signoZodiacal" class="result"></div>
+          <div id="elementoZodiacal" class="result"></div>
+          <div id="planetaZodiacal" class="result"></div>
+          <div id="notaMusical" class="result"></div>
+          <div id="hada" class="result"></div>
+          <div id="mantraPositivo" class="result"></div>
+          <div id="cuarzosZodiacales" class="result"></div>
+          <div id="runaVikinga" class="result"></div>
+          <div id="horoscopoCelta" class="result"></div>
+          <div id="horoscopoEgipcio" class="result"></div>
+          <div id="zodiacoChino" class="result"></div>
+          <div id="horoscopoNumeroPiedra" class="result"></div>
+          <div id="horoscopoFrase" class="result"></div>
+          <div class="btn-wrapper">
+            <a class="btn-whatsup" onclick="shareWhatsApp()">
+                Compartir en <i class="fab fa-whatsapp"></i>
+            </a>
+            
+            <a class="btn-facebook" onclick="shareFacebook()">
+                Compartir en <i class="fab fa-facebook"></i>
+            </a>
+            </div>
+        </div>
+      </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="./img/logo.png" alt="Logo Vsta" class="footer-logo-img">
+                    <div class="footer-logo-wrapper">
+                        <span class="free-question">BellsmonRot</span>
+                        <p>Descubre tu destino a través del arte antiguo de la adivinación.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BellsmonRot. Todos los derechos reservados.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+        // Establecer la fecha de nacimiento si viene en la URL
+        function reducirNumero(numero) {
+            while (numero > 22) {
+                numero = numero.toString().split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+            }
+            return numero;
+        }
+
+        // Función para aplicar el efecto de sombra al hacer hover en los dropdowns
+        function setupHoverEffect(dropdownSelector, targetSelectors) {
+            const dropdown = document.querySelector(dropdownSelector);
+            const targets = document.querySelectorAll(targetSelectors);
+
+            dropdown.addEventListener('mouseenter', () => {
+                targets.forEach(target => target.classList.add('hover-effect'));
+            });
+            dropdown.addEventListener('mouseleave', () => {
+                targets.forEach(target => target.classList.remove('hover-effect'));
+            });
+        }
+
+        function calcularMatriz() {
+            const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+            if (!fechaNacimiento) {
+                alert("Por favor, introduce una fecha de nacimiento válida.");
+                return;
+            }
+
+            const fecha = new Date(fechaNacimiento);
+            const dia = fecha.getDate();
+            const mes = fecha.getMonth() + 1;
+            const anio = fecha.getFullYear();
+
+            const A = reducirNumero(dia);
+            const B = reducirNumero(mes);
+            const C = reducirNumero(anio);
+            const D = reducirNumero(A + B + C);
+            const E = reducirNumero(A + B + C + D);
+            const F = reducirNumero(A + B);
+            const G = reducirNumero(B + C);
+            const H = reducirNumero(A + D);
+            const I = reducirNumero(C + D);
+            const FurAnc = reducirNumero(F + G + H + I);
+            const cielo = reducirNumero(B + D);
+            const tierra = reducirNumero(A + C);
+            const propositoPersonal = reducirNumero(cielo + tierra);
+            const hombre = reducirNumero(F + I);
+            const mujer = reducirNumero(G + H);
+            const propositoSocial = reducirNumero(hombre + mujer);
+            const propositoVida = reducirNumero(propositoSocial + propositoPersonal);
+            const J = reducirNumero(E + D);
+            const K = reducirNumero(E + B);
+            const L = reducirNumero(F + FurAnc);
+            const M = reducirNumero(G + FurAnc);
+            const N = reducirNumero(E + A);
+            const O = reducirNumero(E + C);
+            const P = reducirNumero(H + FurAnc);
+            const Q = reducirNumero(I + FurAnc);
+            const R = reducirNumero(J + O);
+            const S = reducirNumero(K + B);
+            const T = reducirNumero(J + D);
+            const U = reducirNumero(A + N);
+            const V = reducirNumero(O + C);
+            const W = reducirNumero(F + L);
+            const X = reducirNumero(M + G);
+            const Y = reducirNumero(P + H);
+            const Z = reducirNumero(Q + I);
+            const Cha1 = reducirNumero(K + E);
+            const Cha2 = reducirNumero(N + E);
+            const Car1 = reducirNumero(O + R);
+            const Car2 = reducirNumero(J + R);
+            const Sexu = reducirNumero(E + FurAnc);
+
+            const matriz = `
+                <div class="matrix-number pos-A pos-Big">${A}</div>
+                <div class="matrix-number pos-B pos-Big">${B}</div>
+                <div class="matrix-number pos-C pos-Big">${C}</div>
+                <div class="matrix-number pos-D pos-Big">${D}</div>
+                <div class="matrix-number pos-E pos-Big">${E}</div>
+                <div class="matrix-number pos-F pos-Big">${F}</div>
+                <div class="matrix-number pos-G pos-Big">${G}</div>
+                <div class="matrix-number pos-H pos-Big">${H}</div>
+                <div class="matrix-number pos-I pos-Big">${I}</div>
+                <div class="matrix-number pos-J pos-Small">${J}</div>
+                <div class="matrix-number pos-K pos-Small">${K}</div>
+                <div class="matrix-number pos-L pos-Small">${L}</div>
+                <div class="matrix-number pos-M pos-Small">${M}</div>
+                <div class="matrix-number pos-N pos-Small">${N}</div>
+                <div class="matrix-number pos-O pos-Small">${O}</div>
+                <div class="matrix-number pos-P pos-Small">${P}</div>
+                <div class="matrix-number pos-Q pos-Small">${Q}</div>
+                <div class="matrix-number pos-R pos-Small">${R}</div>
+                <div class="matrix-number pos-S pos-Normal">${S}</div>
+                <div class="matrix-number pos-T pos-Normal">${T}</div>
+                <div class="matrix-number pos-U pos-Normal">${U}</div>
+                <div class="matrix-number pos-V pos-Normal">${V}</div>
+                <div class="matrix-number pos-W pos-Normal">${W}</div>
+                <div class="matrix-number pos-X pos-Normal">${X}</div>
+                <div class="matrix-number pos-Y pos-Normal">${Y}</div>
+                <div class="matrix-number pos-Z pos-Normal">${Z}</div>
+                <div class="matrix-number pos-Cha1 pos-Small">${Cha1}</div>
+                <div class="matrix-number pos-Cha2 pos-Small">${Cha2}</div>
+                <div class="matrix-number pos-Car1 pos-Small">${Car1}</div>
+                <div class="matrix-number pos-Car2 pos-Small">${Car2}</div>
+                <div class="matrix-number pos-FurAnc pos-Normal">${FurAnc}</div>
+                <div class="matrix-number pos-Sexu pos-Small">${Sexu}</div>
+            `;
+            document.getElementById("resultadoMatriz").innerHTML = matriz;
+            document.querySelector("#resultadoInfo").style.display = "flex";
+            // Configuración de los efectos de hover para cada dropdown
+            setupHoverEffect('.dd-Centro', '.pos-E');
+            setupHoverEffect('.dd-Personaje', '.pos-A');
+            setupHoverEffect('.dd-Relfamilia', '.pos-A, .pos-U, .pos-N');
+            setupHoverEffect('.dd-Talentos', '.pos-B, .pos-S, .pos-K');
+            setupHoverEffect('.dd-Karmapasvida', '.pos-D, .pos-T, .pos-J');
+            setupHoverEffect('.dd-Karmamaterial', '.pos-C, .pos-V, .pos-O');
+            setupHoverEffect('.dd-DirPar', '.pos-J, .pos-Car2, .pos-R, .pos-Car1, .pos-O');
+            setupHoverEffect('.dd-LinPat', '.pos-F, .pos-W, .pos-L, .pos-E, .pos-R, .pos-Q, .pos-Z, .pos-I');
+            setupHoverEffect('.dd-LinMat', '.pos-G, .pos-X, .pos-M, .pos-E, .pos-P, .pos-Y, .pos-H');
+        }
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hoy = new Date();
+        const anioActual = hoy.getFullYear();
+        const mesActual = (hoy.getMonth() + 1).toString().padStart(2, "0");
+        const diaActual = hoy.getDate().toString().padStart(2, "0");
+
+        const fechaMin = `${anioActual - 100}-${mesActual}-${diaActual}`;
+        const fechaMax = `${anioActual}-${mesActual}-${diaActual}`;
+
+        const inputFechaNacimiento = document.getElementById("fechaNacimiento");
+        inputFechaNacimiento.min = fechaMin;
+        inputFechaNacimiento.max = fechaMax;
+    });
+
+    // Esta función determina el animal del zodiaco chino basado en el año de nacimiento
+    function obtenerZodiacoChino(anio) {
+        const animalesZodiacoChino = [
+        "Rata",
+        "Buey",
+        "Tigre",
+        "Conejo",
+        "Dragón",
+        "Serpiente",
+        "Caballo",
+        "Cabra",
+        "Mono",
+        "Gallo",
+        "Perro",
+        "Cerdo",
+        ];
+
+        // La secuencia del zodiaco chino se repite cada 12 años
+        const indice = (anio - 1924) % 12;
+        return animalesZodiacoChino[indice];
+    }
+
+    // Esta función determina el material basado en el último dígito del año de nacimiento
+    function obtenerMaterial(anio) {
+        const ultimoDigito = anio % 10;
+
+        switch (ultimoDigito) {
+        case 0:
+        case 1:
+            return "Metal";
+        case 2:
+        case 3:
+            return "Agua";
+        case 4:
+        case 5:
+            return "Madera";
+        case 6:
+        case 7:
+            return "Fuego";
+        case 8:
+        case 9:
+            return "Tierra";
+        default:
+            return "Desconocido";
+        }
+    }
+
+    function calcularEdad(fechaNacimiento) {
+        const hoy = new Date();
+        const nacimiento = new Date(fechaNacimiento);
+        let edad = hoy.getFullYear() - nacimiento.getFullYear();
+        const mes = hoy.getMonth() - nacimiento.getMonth();
+
+        if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+        edad--;
+        }
+
+        return edad;
+    }
+
+    // Función para obtener la información detallada del signo zodiacal
+    function obtenerSignoZodiacalCompleto(fechaNacimiento) {
+        const nacimiento = new Date(fechaNacimiento);
+        const dia = nacimiento.getDate();
+        const mes = nacimiento.getMonth() + 1; // Los meses en JavaScript comienzan desde 0
+
+        let signo = "";
+        let elemento = "";
+        let planeta = "";
+        let cuarzos = "";
+        let notaMusical = "";
+        let mantraPositivo = "";
+        let mantraHindu = "";
+
+        if ((mes == 3 && dia >= 21) || (mes == 4 && dia <= 19)) {
+        signo = "Aries";
+        elemento = "Fuego";
+        planeta = "Marte";
+        cuarzos = "Ojo de tigre, Rubí, Granate";
+        notaMusical = "Do";
+        mantraPositivo = "YO SOY";
+        mantraHindu = "main hoon मैं हूँ";
+        hada = "Grig / Gris";
+        } else if ((mes == 4 && dia >= 20) || (mes == 5 && dia <= 20)) {
+        signo = "Tauro";
+        elemento = "Tierra";
+        planeta = "Venus";
+        cuarzos = "Amatista, Esmeralda, Jaspe Verde";
+        notaMusical = "Re";
+        mantraPositivo = "YO TENGO";
+        mantraHindu = "mere paas hai मेरे पास है";
+        hada = "Gwragged Annwm";
+        } else if ((mes == 5 && dia >= 21) || (mes == 6 && dia <= 20)) {
+        signo = "Géminis";
+        elemento = "Aire";
+        planeta = "Marte";
+        cuarzos = "Ágata, Aguamarina, Ojo de tigre";
+        notaMusical = "Mi";
+        mantraPositivo = "YO PIENSO";
+        mantraHindu = "mujhe lagata hai मुझे लगता है";
+        hada = "Morrigu";
+        } else if ((mes == 6 && dia >= 21) || (mes == 7 && dia <= 22)) {
+        signo = "Cáncer";
+        elemento = "Agua";
+        planeta = "Luna";
+        cuarzos = "Perla, Coral, Lapislázuli";
+        notaMusical = "Fa";
+        mantraPositivo = "YO SIENTO";
+        mantraHindu = "mujhe lagata मुझे लगता";
+        hada = "Licke";
+        } else if ((mes == 7 && dia >= 23) || (mes == 8 && dia <= 22)) {
+        signo = "Leo";
+        elemento = "Fuego";
+        planeta = "Sol";
+        cuarzos = "Cuarzo Rosa, Rubí, Zafiro";
+        notaMusical = "Sol";
+        mantraPositivo = "YO PUEDO";
+        mantraHindu = "mein kaar sakata hoon मैं कर सकता हूँ";
+        hada = "Malekin";
+        } else if ((mes == 8 && dia >= 23) || (mes == 9 && dia <= 22)) {
+        signo = "Virgo";
+        elemento = "Tierra";
+        planeta = "Mercurio";
+        cuarzos = "Aguamarina, Ojo de tigre, Cuarzo Rosa";
+        notaMusical = "Mi bemol";
+        mantraPositivo = "YO ANALIZO";
+        mantraHindu = "main vishleshan karata hoon मैं विश्लेषण करता हूँ";
+        hada = "Habetrot";
+        } else if ((mes == 9 && dia >= 23) || (mes == 10 && dia <= 22)) {
+        signo = "Libra";
+        elemento = "Aire";
+        planeta = "Venus";
+        cuarzos = "Ópalo rosa, Jade, Pirita";
+        notaMusical = "La";
+        mantraPositivo = "YO EQUILIBRO";
+        mantraHindu = "mein santulan मैं संतुलन";
+        hada = "Oonagh";
+        } else if ((mes == 10 && dia >= 23) || (mes == 11 && dia <= 21)) {
+        signo = "Escorpio";
+        elemento = "Agua";
+        planeta = "Plutón y Marte";
+        cuarzos = "Turmalina, Granate, Rubí";
+        notaMusical = "Fa sostenido";
+        mantraPositivo = "YO DESEO";
+        mantraHindu = "meree ichchha hai मेरी इच्छा है";
+        hada = "Silky Brownie";
+        } else if ((mes == 11 && dia >= 22) || (mes == 12 && dia <= 21)) {
+        signo = "Sagitario";
+        elemento = "Fuego";
+        planeta = "Júpiter";
+        cuarzos = "Topacio, Ópalo rosa, Zafiro";
+        notaMusical = "Sí";
+        mantraPositivo = "YO VEO";
+        mantraHindu = "main dekhata hoon मैं देखता हूँ";
+        hada = "Leanan Sidhe";
+        } else if ((mes == 12 && dia >= 22) || (mes == 1 && dia <= 19)) {
+        signo = "Capricornio";
+        elemento = "Tierra";
+        planeta = "Saturno";
+        cuarzos = "Diamante, Ópalo rosa, Topacio";
+        notaMusical = "La sostenido";
+        mantraPositivo = "YO UTILIZO";
+        mantraHindu = "main upayog karata hoon मैं उपयोग करता हूँ";
+        hada = "Nimue";
+        } else if ((mes == 1 && dia >= 20) || (mes == 2 && dia <= 18)) {
+        signo = "Acuario";
+        elemento = "Aire";
+        planeta = "Urano";
+        cuarzos = "Amatista, Cuarzo Azul, Topacio";
+        notaMusical = "Sol";
+        mantraPositivo = "YO SÉ";
+        mantraHindu = "mujhe pata hai मुझे पता है";
+        hada = "Meg Mulianch";
+        } else if ((mes == 2 && dia >= 19) || (mes == 3 && dia <= 20)) {
+        signo = "Piscis";
+        elemento = "Agua";
+        planeta = "Neptuno";
+        cuarzos = "Perla, Aguamarina, Amatista";
+        notaMusical = "Sí bemol";
+        mantraPositivo = "YO CREO";
+        mantraHindu = "mujhe vishvaas hai मुझे विश्वास है";
+        hada = "Ellyllon";
+        } else {
+        signo = "Desconocido";
+        elemento = "Desconocido";
+        planeta = "Desconocido";
+        cuarzos = "Desconocido";
+        notaMusical = "Desconocido";
+        mantraPositivo = "Desconocido";
+        mantraHindu = "Desconocido";
+        hada = "Desconocido";
+        }
+
+        return {
+        signo,
+        elemento,
+        planeta,
+        cuarzos,
+        notaMusical,
+        mantraPositivo,
+        mantraHindu,
+        hada,
+        };
+    }
+
+    function obtenerHoroscopoCelta(fechaNacimiento) {
+        const nacimiento = new Date(fechaNacimiento);
+        const dia = nacimiento.getDate();
+        const mes = nacimiento.getMonth() + 1;
+
+        const horoscopos = [
+        {
+            inicio: { mes: 1, dia: 2 },
+            fin: { mes: 1, dia: 11 },
+            arbol: "Abeto",
+            cualidad: "Misterio",
+            clave:
+            "Si demandás demasiada seguridad de los otros, vas a recibir lo opuesto. Es mejor ofrecerle al mundo eso que el mundo no te ofrece.",
+            numero: 18,
+            piedra: "Ámbar",
+        },
+        {
+            inicio: { mes: 1, dia: 12 },
+            fin: { mes: 1, dia: 24 },
+            arbol: "Olmo",
+            cualidad: "Nobleza",
+            clave:
+            "El coraje es tu mejor herramienta. Animate a lo nuevo, lo original y lo creativo. Alejate de las “etiquetas”, no suman nada a tu vida.",
+            numero: 14,
+            piedra: "Piedralunar",
+        },
+        {
+            inicio: { mes: 1, dia: 25 },
+            fin: { mes: 2, dia: 3 },
+            arbol: "Ciprés",
+            cualidad: "Fidelidad",
+            clave:
+            "Las dificultades y las tristezas que tengas que pasar en tu vida serán el camino que te lleve al éxito y a la libertad que tanto necesitás.",
+            numero: 8,
+            piedra: "Tanzanita azul",
+        },
+        {
+            inicio: { mes: 2, dia: 4 },
+            fin: { mes: 2, dia: 8 },
+            arbol: "Álamo",
+            cualidad: "Incertidumbre",
+            clave:
+            "No confíes demasiado, aquellos que prometen demasiado, en general te dan muy poco.",
+            numero: 5,
+            piedra: "Coral",
+        },
+        {
+            inicio: { mes: 2, dia: 9 },
+            fin: { mes: 2, dia: 18 },
+            arbol: "Cedro",
+            cualidad: "Confianza",
+            clave:
+            "Si querés que el mundo sea un lugar mejor, mejorá vos mismo y vas a lograrlo, tenés el poder de hacerlo.",
+            numero: 1,
+            piedra: "Topacio",
+        },
+        {
+            inicio: { mes: 2, dia: 19 },
+            fin: { mes: 2, dia: 29 },
+            arbol: "Pino",
+            cualidad: "Particular",
+            clave:
+            "La búsqueda de la perfección es infinita y, muchas veces, se convierte en algo muy peligroso: aceptate y conciliá.",
+            numero: 15,
+            piedra: "Cristal de roca",
+        },
+        {
+            inicio: { mes: 3, dia: 1 },
+            fin: { mes: 3, dia: 10 },
+            arbol: "Sauce",
+            cualidad: "Melancolía",
+            clave:
+            "Es muy fácil entender a los demás, pero más importante y productivo es entenderse a uno mismo.",
+            numero: 10,
+            piedra: "Berilo",
+        },
+        {
+            inicio: { mes: 3, dia: 11 },
+            fin: { mes: 3, dia: 20 },
+            arbol: "Lima",
+            cualidad: "Duda",
+            clave:
+            "El dolor que existe en la vida es el precio que debemos pagar para obtener placeres y alegría.",
+            numero: 12,
+            piedra: "Perlas",
+        },
+        {
+            inicio: { mes: 3, dia: 21 },
+            fin: { mes: 3, dia: 31 },
+            arbol: "Avellano",
+            cualidad: "Extraordinario",
+            clave: "No siempre el que golpea primero gana la batalla.",
+            numero: 9,
+            piedra: "Espinela",
+        },
+        {
+            inicio: { mes: 4, dia: 1 },
+            fin: { mes: 4, dia: 10 },
+            arbol: "Serbal",
+            cualidad: "Sensibilidad",
+            clave:
+            "La vanidad personal sirve hasta el punto justo en el que te motive. Ningún exceso es bueno.",
+            numero: 60,
+            piedra: "Rodocrosita",
+        },
+        {
+            inicio: { mes: 4, dia: 11 },
+            fin: { mes: 4, dia: 20 },
+            arbol: "Arce",
+            cualidad: "Apertura mental",
+            clave: "Los fuertes y poderosos deben cuidar de los más débiles.",
+            numero: 7,
+            piedra: "Cornalina",
+        },
+        {
+            inicio: { mes: 4, dia: 21 },
+            fin: { mes: 4, dia: 30 },
+            arbol: "Nogal",
+            cualidad: "Pasión",
+            clave:
+            "A veces hay realidades que se deben aceptar, es inevitable. Entonces, ¿por qué preocuparse?",
+            numero: 16,
+            piedra: "Serpentina",
+        },
+        {
+            inicio: { mes: 5, dia: 1 },
+            fin: { mes: 5, dia: 14 },
+            arbol: "Álamo",
+            cualidad: "Incertidumbre",
+            clave:
+            "No confíes demasiado, aquellos que prometen demasiado, en general te dan muy poco.",
+            numero: 5,
+            piedra: "Coral",
+        },
+        {
+            inicio: { mes: 5, dia: 15 },
+            fin: { mes: 5, dia: 24 },
+            arbol: "Castaño",
+            cualidad: "Honestidad",
+            clave: "Todo lo que creemos que sabemos es solo una suposición.",
+            numero: 19,
+            piedra: "Jade",
+        },
+        {
+            inicio: { mes: 5, dia: 25 },
+            fin: { mes: 6, dia: 3 },
+            arbol: "Cerezo",
+            cualidad: "Ambición",
+            clave: "El poder se une a la desconfianza; la fuerza a la verdad.",
+            numero: 22,
+            piedra: "Ópalo de fuego",
+        },
+        {
+            inicio: { mes: 6, dia: 4 },
+            fin: { mes: 6, dia: 13 },
+            arbol: "Carpe",
+            cualidad: "Buen gusto",
+            clave:
+            "La venganza es sólo una manera de reencontrar el balance. Hay muchas otras.",
+            numero: 17,
+            piedra: "Diamante amarillo",
+        },
+        {
+            inicio: { mes: 6, dia: 14 },
+            fin: { mes: 6, dia: 23 },
+            arbol: "Higuera",
+            cualidad: "Sensibilidad",
+            clave:
+            "Sólo el eterno desbalance o la exageración crónica son peligrosos.",
+            numero: 20,
+            piedra: "Ópalo noble",
+        },
+        {
+            inicio: { mes: 6, dia: 24 },
+            fin: { mes: 7, dia: 4 },
+            arbol: "Manzano",
+            cualidad: "Amor",
+            clave: "El que es agradecido, no espera gratitud.",
+            numero: 36,
+            piedra: "Turmalina",
+        },
+        {
+            inicio: { mes: 7, dia: 5 },
+            fin: { mes: 7, dia: 14 },
+            arbol: "Abeto",
+            cualidad: "Misterio",
+            clave:
+            "Si demandás demasiada seguridad de los otros, vas a recibir lo opuesto. Es mejor ofrecerle al mundo eso que el mundo no te ofrece.",
+            numero: 18,
+            piedra: "Ámbar",
+        },
+        {
+            inicio: { mes: 7, dia: 15 },
+            fin: { mes: 7, dia: 25 },
+            arbol: "Olmo",
+            cualidad: "Nobleza",
+            clave:
+            "El coraje es tu mejor herramienta. Animate a lo nuevo, lo original y lo creativo. Alejate de las “etiquetas”, no suman nada a tu vida.",
+            numero: 14,
+            piedra: "Piedralunar",
+        },
+        {
+            inicio: { mes: 7, dia: 26 },
+            fin: { mes: 8, dia: 4 },
+            arbol: "Ciprés",
+            cualidad: "Fidelidad",
+            clave:
+            "Las dificultades y las tristezas que tengas que pasar en tu vida serán el camino que te lleve al éxito y a la libertad que tanto necesitás.",
+            numero: 8,
+            piedra: "Tanzanita azul",
+        },
+        {
+            inicio: { mes: 8, dia: 5 },
+            fin: { mes: 8, dia: 13 },
+            arbol: "Álamo",
+            cualidad: "Incertidumbre",
+            clave:
+            "No confíes demasiado, aquellos que prometen demasiado, en general te dan muy poco.",
+            numero: 5,
+            piedra: "Coral",
+        },
+        {
+            inicio: { mes: 8, dia: 14 },
+            fin: { mes: 8, dia: 23 },
+            arbol: "Cedro",
+            cualidad: "Confianza",
+            clave:
+            "Si querés que el mundo sea un lugar mejor, mejorá vos mismo y vas a lograrlo, tenés el poder de hacerlo.",
+            numero: 1,
+            piedra: "Topacio",
+        },
+        {
+            inicio: { mes: 8, dia: 24 },
+            fin: { mes: 9, dia: 2 },
+            arbol: "Pino",
+            cualidad: "Particular",
+            clave:
+            "La búsqueda de la perfección es infinita y, muchas veces, se convierte en algo muy peligroso: aceptate y conciliá.",
+            numero: 15,
+            piedra: "Cristal de roca",
+        },
+        {
+            inicio: { mes: 9, dia: 3 },
+            fin: { mes: 9, dia: 12 },
+            arbol: "Sauce",
+            cualidad: "Melancolía",
+            clave:
+            "Es muy fácil entender a los demás, pero más importante y productivo es entenderse a uno mismo.",
+            numero: 10,
+            piedra: "Berilo",
+        },
+        {
+            inicio: { mes: 9, dia: 13 },
+            fin: { mes: 9, dia: 22 },
+            arbol: "Lima",
+            cualidad: "Duda",
+            clave:
+            "El dolor que existe en la vida es el precio que debemos pagar para obtener placeres y alegría.",
+            numero: 12,
+            piedra: "Perlas",
+        },
+        {
+            inicio: { mes: 9, dia: 23 },
+            fin: { mes: 9, dia: 30 },
+            arbol: "Avellano",
+            cualidad: "Extraordinario",
+            clave: "No siempre el que golpea primero gana la batalla.",
+            numero: 9,
+            piedra: "Espinela",
+        },
+        {
+            inicio: { mes: 10, dia: 1 },
+            fin: { mes: 10, dia: 10 },
+            arbol: "Serbal",
+            cualidad: "Sensibilidad",
+            clave:
+            "La vanidad personal sirve hasta el punto justo en el que te motive. Ningún exceso es bueno.",
+            numero: 60,
+            piedra: "Rodocrosita",
+        },
+        {
+            inicio: { mes: 10, dia: 11 },
+            fin: { mes: 10, dia: 20 },
+            arbol: "Arce",
+            cualidad: "Apertura mental",
+            clave: "Los fuertes y poderosos deben cuidar de los más débiles.",
+            numero: 7,
+            piedra: "Cornalina",
+        },
+        {
+            inicio: { mes: 10, dia: 21 },
+            fin: { mes: 10, dia: 31 },
+            arbol: "Nogal",
+            cualidad: "Pasión",
+            clave:
+            "A veces hay realidades que se deben aceptar, es inevitable. Entonces, ¿por qué preocuparse?",
+            numero: 16,
+            piedra: "Serpentina",
+        },
+        {
+            inicio: { mes: 11, dia: 1 },
+            fin: { mes: 11, dia: 11 },
+            arbol: "Álamo",
+            cualidad: "Incertidumbre",
+            clave:
+            "No confíes demasiado, aquellos que prometen demasiado, en general te dan muy poco.",
+            numero: 5,
+            piedra: "Coral",
+        },
+        {
+            inicio: { mes: 11, dia: 12 },
+            fin: { mes: 11, dia: 20 },
+            arbol: "Castaño",
+            cualidad: "Honestidad",
+            clave: "Todo lo que creemos que sabemos es solo una suposición.",
+            numero: 19,
+            piedra: "Jade",
+        },
+        {
+            inicio: { mes: 11, dia: 21 },
+            fin: { mes: 11, dia: 30 },
+            arbol: "Cerezo",
+            cualidad: "Ambición",
+            clave: "El poder se une a la desconfianza; la fuerza a la verdad.",
+            numero: 22,
+            piedra: "Ópalo de fuego",
+        },
+        {
+            inicio: { mes: 12, dia: 1 },
+            fin: { mes: 12, dia: 10 },
+            arbol: "Carpe",
+            cualidad: "Buen gusto",
+            clave:
+            "La venganza es sólo una manera de reencontrar el balance. Hay muchas otras.",
+            numero: 17,
+            piedra: "Diamante amarillo",
+        },
+        {
+            inicio: { mes: 12, dia: 11 },
+            fin: { mes: 12, dia: 20 },
+            arbol: "Higuera",
+            cualidad: "Sensibilidad",
+            clave:
+            "Sólo el eterno desbalance o la exageración crónica son peligrosos.",
+            numero: 20,
+            piedra: "Ópalo noble",
+        },
+        {
+            inicio: { mes: 12, dia: 21 },
+            fin: { mes: 12, dia: 31 },
+            arbol: "Manzano",
+            cualidad: "Amor",
+            clave: "El que es agradecido, no espera gratitud.",
+            numero: 36,
+            piedra: "Turmalina",
+        },
+        ];
+
+        for (const horoscopo of horoscopos) {
+        const { inicio, fin } = horoscopo;
+
+        if (
+            (mes === inicio.mes && dia >= inicio.dia) ||
+            (mes === fin.mes && dia <= fin.dia) ||
+            (mes > inicio.mes && mes < fin.mes)
+        ) {
+            return {
+            arbol: horoscopo.arbol,
+            cualidad: horoscopo.cualidad,
+            clave: horoscopo.clave,
+            numero: horoscopo.numero,
+            piedra: horoscopo.piedra,
+            };
+        }
+        }
+
+        return {
+        arbol: "Desconocido",
+        cualidad: "Desconocido",
+        clave: "",
+        numero: null,
+        piedra: "",
+        };
+    }
+
+    // Función para obtener el horóscopo egipcio basado en la fecha de nacimiento
+    function obtenerHoroscopoEgipcio(fechaNacimiento) {
+        const nacimiento = new Date(fechaNacimiento);
+        const dia = nacimiento.getDate();
+        const mes = nacimiento.getMonth() + 1; // Los meses en JavaScript comienzan desde 0
+
+        if ((mes == 1 && dia >= 16) || (mes == 2 && dia <= 15))
+        return "Hijos de Bastet";
+        if ((mes == 2 && dia >= 16) || (mes == 3 && dia <= 15))
+        return "Hijos de Serket";
+        if ((mes == 3 && dia >= 16) || (mes == 4 && dia <= 15))
+        return "Hijos de Apep";
+        if ((mes == 4 && dia >= 16) || (mes == 5 && dia <= 15))
+        return "Hijos de Ptah";
+        if ((mes == 5 && dia >= 16) || (mes == 6 && dia <= 15))
+        return "Hijos de Atum";
+        if ((mes == 6 && dia >= 16) || (mes == 7 && dia <= 15))
+        return "Hijos de Isis";
+        if ((mes == 7 && dia >= 16) || (mes == 8 && dia <= 15))
+        return "Hijos de Ra";
+        if ((mes == 8 && dia >= 16) || (mes == 9 && dia <= 15))
+        return "Hijos de Horus";
+        if ((mes == 9 && dia >= 16) || (mes == 10 && dia <= 15))
+        return "Hijos de Maat";
+        if ((mes == 10 && dia >= 16) || (mes == 11 && dia <= 15))
+        return "Hijos de Osiris";
+        if ((mes == 11 && dia >= 16) || (mes == 12 && dia <= 15))
+        return "Hijos de Hathor";
+        if ((mes == 12 && dia >= 16) || (mes == 1 && dia <= 15))
+        return "Hijos de Anubis";
+        return "Desconocido";
+    }
+
+    function obtenerRunaVikinga(fechaNacimiento) {
+        const { signo } = obtenerSignoZodiacalCompleto(fechaNacimiento); // Extrae el signo zodiacal completo
+
+        const runasVikingas = {
+        Aries: "Ken",
+        Tauro: "Urz",
+        Géminis: "Ansur",
+        Cáncer: "Lagu",
+        Leo: "Sigel",
+        Virgo: "Ger",
+        Libra: "Gyfu",
+        Escorpio: "Peorth",
+        Sagitario: "Rad",
+        Capricornio: "Othel",
+        Acuario: "Man",
+        Piscis: "Eolh",
+        };
+
+        return runasVikingas[signo] || "Desconocido"; // Usar el signo extraído del objeto devuelto
+    }
+
+    function convertirEdad() {
+        const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+        const flexColum = document.querySelector("div.container-flex-colm");
+
+        flexColum.style.display = "block";
+        flexColum.style.visibility = "visible";
+
+        if (!fechaNacimiento) {
+        alert("Por favor, introduce una fecha de nacimiento válida.");
+        return;
+        }
+
+        const edad = calcularEdad(fechaNacimiento);
+        const anioNacimiento = new Date(fechaNacimiento).getFullYear();
+        const {
+        signo,
+        elemento,
+        planeta,
+        cuarzos,
+        notaMusical,
+        mantraPositivo,
+        mantraHindu,
+        hada,
+        } = obtenerSignoZodiacalCompleto(fechaNacimiento); // Zodiaco occidental
+        const runaVikinga = obtenerRunaVikinga(fechaNacimiento);
+        const horoscopoCelta = obtenerHoroscopoCelta(fechaNacimiento); // Horóscopo celta
+        const horoscopoEgipcio = obtenerHoroscopoEgipcio(fechaNacimiento); // Horóscopo egipcio
+        const zodiacoChino = obtenerZodiacoChino(anioNacimiento); // Zodiaco chino
+        const material = obtenerMaterial(anioNacimiento); // Elemento del zodiaco chino
+
+        if (edad < 0) {
+        alert("La fecha de nacimiento no puede ser en el futuro.");
+        return;
+        }
+
+        const horasDecimal = (edad / 100) * 24;
+        const horas = Math.floor(horasDecimal);
+        const minutosDecimal = (horasDecimal - horas) * 60;
+        const minutos = Math.floor(minutosDecimal);
+        const segundos = Math.floor((minutosDecimal - minutos) * 60);
+
+        const gradosHora = (horas / 12) * 360 + (minutos / 60) * 30;
+        const gradosMinuto = (minutos / 60) * 360 + (segundos / 60) * 6;
+        const gradosSegundo = (segundos / 60) * 360;
+
+        document.getElementById(
+        "hourHand"
+        ).style.transform = `rotate(${gradosHora}deg)`;
+        document.getElementById(
+        "minuteHand"
+        ).style.transform = `rotate(${gradosMinuto}deg)`;
+        document.getElementById(
+        "secondHand"
+        ).style.transform = `rotate(${gradosSegundo}deg)`;
+
+        document.getElementById(
+        "edadCalculada"
+        ).textContent = `Edad calculada: ${edad} años`;
+        document.getElementById(
+        "horaActual"
+        ).textContent = `Hora en formato 24h: ${horas
+        .toString()
+        .padStart(2, "0")}:${minutos.toString().padStart(2, "0")}:${segundos
+        .toString()
+        .padStart(2, "0")}`;
+        document.getElementById(
+        "signoZodiacal"
+        ).textContent = `Tu signo zodiacal es: ${signo}`;
+        document.getElementById(
+        "elementoZodiacal"
+        ).textContent = `Elemento: ${elemento}`;
+        document.getElementById(
+        "planetaZodiacal"
+        ).textContent = `Planeta: ${planeta}`;
+        document.getElementById("hada").textContent = `Hada: ${hada}`;
+        document.getElementById(
+        "cuarzosZodiacales"
+        ).textContent = `Cuarzos: ${cuarzos}`;
+        document.getElementById(
+        "notaMusical"
+        ).textContent = `Nota musical: ${notaMusical}`;
+        document.getElementById(
+        "mantraPositivo"
+        ).textContent = `Mantra: ${mantraPositivo} ${mantraHindu}`;
+        document.getElementById(
+        "runaVikinga"
+        ).textContent = `Tu runa vikinga es: ${runaVikinga}`;
+        document.getElementById(
+        "horoscopoCelta"
+        ).textContent = `Tu árbol celta es: ${horoscopoCelta.arbol}, Cualidad: ${horoscopoCelta.cualidad}`;
+        document.getElementById(
+        "horoscopoEgipcio"
+        ).textContent = `Tu horóscopo egipcio es: ${horoscopoEgipcio}`;
+        document.getElementById(
+        "zodiacoChino"
+        ).textContent = `Tu zodiaco chino es: ${zodiacoChino} de ${material}`;
+        document.getElementById(
+        "horoscopoNumeroPiedra"
+        ).textContent = `Numero: ${horoscopoCelta.numero}, Piedra: ${horoscopoCelta.piedra}`;
+        document.getElementById(
+        "horoscopoFrase"
+        ).innerHTML = ` Frase: <em>${horoscopoCelta.clave}</em>`;
+    }
+    </script>
+
+</body>
+</html>
