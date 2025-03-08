@@ -1,0 +1,52 @@
+{
+    "background_color": "#232342",
+    "dir": "ltr",
+    "display": "fullscreen",
+    "name": "BellsmonRot - Adivinación y Tarot",
+    "orientation": "portrait",
+    "scope": "./",
+    "short_name": "BellsmonRot",
+    "start_url": "./",
+    "theme_color": "#232342",
+    "icons": [
+      {
+        "src": "./img/favicon/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "./img/favicon/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "src": "./img/favicon/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "./img/favicon/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "./img/screenshots/screenshot1.png",
+        "sizes": "1080x1920",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Pantalla de inicio"
+      },
+      {
+        "src": "./img/screenshots/screenshot2.png",
+        "sizes": "1080x1920",
+        "type": "image/png",
+        "form_factor": "narrow",
+        "label": "Vista en móvil"
+      }
+    ],
+    "id": "id_bellsmonrot",
+    "description": "BellsmonRot - Adivinación y Tarot"
+  }
+  

@@ -15,6 +15,25 @@
     <script src="./js/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Vincula el manifest.json -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Meta para el color de la barra de direcciones en móviles -->
+    <meta name="theme-color" content="#232342">
+    
+    <!-- Icono de la aplicación -->
+    <link rel="icon" href="./img/favicon/favicon-32x32.png" type="image/png">
+    
+    <!-- Meta para iOS (opcional) -->
+    <link rel="apple-touch-icon" href="./img/favicon/android-chrome-192x192.png">
+    <script>
+        // Registro del Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/js/sw.js')
+            .then(reg => console.log('Service Worker registrado', reg))
+            .catch(err => console.error('Error al registrar el Service Worker', err));
+        }
+    </script>
     <!-- Meta etiquetas para redes sociales -->
     <meta property="og:title" content="BellsmonRot - Adivinación y Tarot">
     <meta property="og:description"
@@ -206,7 +225,7 @@
                     </div>
                     <h3>Playera<br>oficial</h3>
                     <p class="price">$250.00</p>
-                    <a href="https://buy.stripe.com/6oE9B56kv5vm4HSdQQ" target="_blank">
+                    <a href="https://buy.stripe.com/6oE9B56kv5vm4HSdQQ " target="_blank">
                         <button class="add-to-cart">Obtener</button>
                     </a>
                 </div>
@@ -474,8 +493,8 @@
             <div class="footer-bottom">
                 <p>&copy; <span class="year"></span> BellsmonRot. Todos los derechos reservados.<span class="firma">Creado por Rodrigo Sendino Sanz</span></p>
                 <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/bloodydusty/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/bellsmonrot/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
