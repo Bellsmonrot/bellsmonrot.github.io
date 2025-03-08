@@ -1,6 +1,10 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   firma();
+  const yearElement = document.querySelector('.year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
   // Header scroll effect
   const header = document.querySelector("header");
 
@@ -440,7 +444,7 @@ tarotContainer.addEventListener('mouseleave', () => {
 });
 
 function firma() {
-  console.log("%c Bienvenid@ a mi pagina", "background: #ff8906; border-radius:12%;color:#fffffe;padding: 2em;font-size: 2em;");
+  console.log("%c Creado por Rodrigo Sendino Sanz", "background: #ff8906; border-radius:12%;color:#fffffe;padding: 2em;font-size: 2em;");
   console.log("%c No olvides seguirme en redes:", "color:#e53170;padding: 1.5em;font-size: 1.5em;"); 
   console.log("%c Instagram: https://www.instagram.com/rodrigosendinosanz/", "color:#405DE6;padding: 1em;font-size: 1em;background: #fff;");
   console.log("%c Twitter: https://twitter.com/rodrigosendino", "color:#1DA1F2;padding: 1em;font-size: 1em;background: #fff;");
