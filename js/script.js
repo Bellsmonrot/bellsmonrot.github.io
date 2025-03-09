@@ -1,30 +1,35 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   firma();
-  const yearElement = document.querySelector('.year');
+  const yearElement = document.querySelector(".year");
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
 
-    // Evitar clic derecho en toda la página
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
+  // Evitar clic derecho en toda la página
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
 
-    // Evitar arrastrar imágenes
-    document.addEventListener('dragstart', function(e) {
-        if (e.target.tagName === 'IMG') {
-            e.preventDefault();
-        }
-    });
+  // Evitar arrastrar imágenes
+  document.addEventListener("dragstart", function (e) {
+    if (e.target.tagName === "IMG") {
+      e.preventDefault();
+    }
+  });
 
-    // Evitar Ctrl+S, Ctrl+U y Ctrl+Shift+I (Guardar, Ver Código Fuente, DevTools)
-    document.addEventListener('keydown', function(e) {
-        if (e.ctrlKey && (e.key === 's' || e.key === 'u' || e.key === 'Shift' && e.key === 'I')) {
-            e.preventDefault();
-            alert('Bellsmonrot Tarot🎃🔮💀 Contenido Oficial https://bellsmonrot.github.io/');
-        }
-    });
+  // Evitar Ctrl+S, Ctrl+U y Ctrl+Shift+I (Guardar, Ver Código Fuente, DevTools)
+  document.addEventListener("keydown", function (e) {
+    if (
+      e.ctrlKey &&
+      (e.key === "s" || e.key === "u" || (e.key === "Shift" && e.key === "I"))
+    ) {
+      e.preventDefault();
+      alert(
+        "Bellsmonrot Tarot🎃🔮💀 Contenido Oficial https://bellsmonrot.github.io/"
+      );
+    }
+  });
   // Header scroll effect
   const header = document.querySelector("header");
 
@@ -351,78 +356,84 @@ function shareFacebook() {
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank");
 }
 
-document.addEventListener('copy', (event) => {
+document.addEventListener("copy", (event) => {
   event.preventDefault(); // Evita la acción de copiar
-  const customText = 'Bellsmonrot Tarot 🎃🔮💀 ➡️ https://bellsmonrot.github.io/';
+  const customText =
+    "Bellsmonrot Tarot 🎃🔮💀 ➡️ https://bellsmonrot.github.io/";
   if (event.clipboardData) {
-    event.clipboardData.setData('text/plain', customText);
+    event.clipboardData.setData("text/plain", customText);
   } else if (window.clipboardData) {
-    window.clipboardData.setData('Text', customText);
+    window.clipboardData.setData("Text", customText);
   }
-  alert('No se permite copiar contenido de esta página.');
+  alert("No se permite copiar contenido de esta página.");
 });
 
 // Opcional: Desactivar el menú contextual (botón derecho)
-emailjs.init('cv7FuUnPNFET-S02I');
+emailjs.init("cv7FuUnPNFET-S02I");
 
 function sendEmail(e) {
   e.preventDefault();
-  
-  emailjs.sendForm('service_5dje1mm', 'template_suq0w3c', e.target)
-    .then(() => {
+
+  emailjs.sendForm("service_5dje1mm", "template_suq0w3c", e.target).then(
+    () => {
       Swal.fire({
-        icon: 'success',
-        title: '¡Mensaje enviado!',
-        text: 'Gracias por contactarnos. Te responderemos pronto.',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Aceptar'
+        icon: "success",
+        title: "¡Mensaje enviado!",
+        text: "Gracias por contactarnos. Te responderemos pronto.",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Aceptar",
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = "#banner";
           e.target.reset();
         }
       });
-    }, (error) => {
+    },
+    (error) => {
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'No se pudo enviar el mensaje. Por favor intenta nuevamente.',
-        confirmButtonColor: '#d33',
-        confirmButtonText: 'Cerrar'
+        icon: "error",
+        title: "Error",
+        text: "No se pudo enviar el mensaje. Por favor intenta nuevamente.",
+        confirmButtonColor: "#d33",
+        confirmButtonText: "Cerrar",
       });
-    });
+    }
+  );
 }
 
-document.addEventListener('DOMContentLoaded', () => { 
-  const frontImage = document.querySelector('.tarot-front');
-  const backImage = document.querySelector('.tarot-back');
+document.addEventListener("DOMContentLoaded", () => {
+  // ejecutar solo en el index
+  if (!window.location.href.includes("matriz_del_destino.html")) {
+    const frontImage = document.querySelector(".tarot-front");
+    const backImage = document.querySelector(".tarot-back");
 
-  // Array con las 21 imágenes del tarot
-  const images = [
-      './img/tarot/fooltarot.jpg',
-      './img/tarot/magiciantarot.jpg',
-      './img/tarot/empresstarot.jpg',
-      './img/tarot/emperortarot.jpg',
-      './img/tarot/hierophanttarot.jpg',
-      './img/tarot/loverstarot.jpg',
-      './img/tarot/carrotarot.jpg',
-      './img/tarot/fuerzatarot.jpg',
-      './img/tarot/ermitanotarot.jpg',
-      './img/tarot/justiciatarot.jpg',
-      './img/tarot/torretarot.jpg',
-      './img/tarot/ruedatarot.jpg',
-      './img/tarot/colgadotarot.jpg',
-      './img/tarot/muertetarot.jpg',
-      './img/tarot/templanzatarot.jpg',
-      './img/tarot/diablotarot.jpg',
-      './img/tarot/lunatarot.jpg',
-      './img/tarot/soltarot.jpg',
-      './img/tarot/estellatarot.jpg',
-      './img/tarot/juiciotarot.jpg',
-      './img/tarot/mundotarot.jpg',
-  ];
+    // Array con las 22 imágenes del tarot
+    const images = [
+      "./img/tarot/fooltarot.jpg",
+      "./img/tarot/magiciantarot.jpg",
+      "./img/tarot/empresstarot.jpg",
+      "./img/tarot/emperortarot.jpg",
+      "./img/tarot/hierophanttarot.jpg",
+      "./img/tarot/loverstarot.jpg",
+      "./img/tarot/carrotarot.jpg",
+      "./img/tarot/fuerzatarot.jpg",
+      "./img/tarot/ermitanotarot.jpg",
+      "./img/tarot/justiciatarot.jpg",
+      "./img/tarot/torretarot.jpg",
+      "./img/tarot/ruedatarot.jpg",
+      "./img/tarot/colgadotarot.jpg",
+      "./img/tarot/muertetarot.jpg",
+      "./img/tarot/templanzatarot.jpg",
+      "./img/tarot/diablotarot.jpg",
+      "./img/tarot/lunatarot.jpg",
+      "./img/tarot/soltarot.jpg",
+      "./img/tarot/estellatarot.jpg",
+      "./img/tarot/juiciotarot.jpg",
+      "./img/tarot/mundotarot.jpg",
+      "./img/tarot/emperatriztarot.jpg",
+    ];
 
-  function changeImage() {
+    function changeImage() {
       // Seleccionar una imagen aleatoria del array
       const randomIndex = Math.floor(Math.random() * images.length);
 
@@ -435,31 +446,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Después de la transición, intercambiar las imágenes
       setTimeout(() => {
-          frontImage.src = backImage.src;
-          frontImage.style.opacity = 1;
-          backImage.style.opacity = 0;
+        frontImage.src = backImage.src;
+        frontImage.style.opacity = 1;
+        backImage.style.opacity = 0;
       }, 1000);
+    }
+
+    // Asignar la imagen inicial como 'empresstarot.jpg' al cargar la página
+    frontImage.src = "./img/tarot/empresstarot.jpg";
+    // Cambiar la imagen cada 5 segundos
+    setInterval(changeImage, 5000);
   }
-
-  // Asignar la imagen inicial como 'empresstarot.jpg' al cargar la página
-  frontImage.src = './img/tarot/empresstarot.jpg';
-
-  // Cambiar la imagen cada 5 segundos
-  setInterval(changeImage, 5000);
 });
 
+if (!window.location.href.includes("matriz_del_destino.html")) {
+  const tarotContainer = document.querySelector(".tarot-container");
+  const tarotCard = document.querySelector(".tarot-cards");
 
-const tarotContainer = document.querySelector('.tarot-container');
-const tarotCard = document.querySelector('.tarot-cards');
-
-tarotContainer.addEventListener('mousemove', (e) => {
+  tarotContainer.addEventListener("mousemove", (e) => {
     const rect = tarotContainer.getBoundingClientRect();
     const x = e.clientX - rect.left; // Posición del mouse dentro del contenedor
     const y = e.clientY - rect.top;
 
     // Cálculo de la rotación en base a la posición del mouse
-    const rotateX = ((y / rect.height) - 0.5) * 20; // Inclina la carta en el eje X
-    const rotateY = ((x / rect.width) - 0.5) * -20; // Inclina la carta en el eje Y
+    const rotateX = (y / rect.height - 0.5) * 20; // Inclina la carta en el eje X
+    const rotateY = (x / rect.width - 0.5) * -20; // Inclina la carta en el eje Y
 
     tarotCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
@@ -467,42 +478,122 @@ tarotContainer.addEventListener('mousemove', (e) => {
     const shadowX = (x / rect.width) * 30 - 15; // Aumentamos el rango del reflejo X
     const shadowY = (y / rect.height) * 30 - 15; // Aumentamos el rango del reflejo Y
     tarotCard.style.boxShadow = `${shadowX}px ${shadowY}px 30px rgba(0, 0, 0, 0.4)`; // Mayor intensidad de sombra
-});
+  });
 
-// Restablece la rotación cuando el mouse sale del contenedor
-tarotContainer.addEventListener('mouseleave', () => {
-    tarotCard.style.transform = 'rotate(5deg)'; // Regresa al ángulo original
-    tarotCard.style.boxShadow = 'none'; // Elimina el reflejo cuando el ratón sale
-});
+  // Restablece la rotación cuando el mouse sale del contenedor
+  tarotContainer.addEventListener("mouseleave", () => {
+    tarotCard.style.transform = "rotate(5deg)"; // Regresa al ángulo original
+    tarotCard.style.boxShadow = "none"; // Elimina el reflejo cuando el ratón sale
+  });
+}
 
 function firma() {
-  console.log("%c Creado por Rodrigo Sendino Sanz", "background: #ff8906; border-radius:12%;color:#fffffe;padding: 2em;font-size: 2em;");
-  console.log("%c No olvides seguirme en redes:", "color:#e53170;padding: 1.5em;font-size: 1.5em;"); 
-  console.log("%c Instagram: https://www.instagram.com/rodrigosendinosanz/", "color:#405DE6;padding: 1em;font-size: 1em;background: #fff;");
-  console.log("%c Twitter: https://twitter.com/rodrigosendino", "color:#1DA1F2;padding: 1em;font-size: 1em;background: #fff;");
-  console.log("%c Linkedin: https://www.linkedin.com/in/rodrigo-sendino-sanz-27a3a0100/", "color:#0e76a8;padding: 1em;font-size: 1em;background: #fff;");
-  console.log("%c Github: https://github.com/RodrigoSendinoSanz", "color:#211F1F;padding: 1em;font-size: 1em;background: #fff;");
-  console.log("%c by Rodrigo Sendino Sanz", "color:gold;padding: 1em;font-size: 1.5em;");
-  console.log("%c                     @@@@@@@                     ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c             @...@@           @@...@             ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c        @..@                       @..@         ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c     @..        @..@    /.@   @@..@      ..@      ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c   @.@     @.@         /.@         *.#    @.@    ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c  .@    ,.@            /.@            .@    (.   ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c  %..@ .@              /.@              .@   @.@ ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c       @...@           /.@               @@   @.@","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c           @....%      /.@                .@   @.","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c               &....@  /.&                 .    .","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c@.... (.............@ @...*    ..............  ...","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c@.    @&                /./....%                  ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c .@    .                /./   &....@              ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c @.     .               /./        @...@          ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c  @.&    .@             /./            @..@       ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c    .@     .@           /./            .@  @...   ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c     @.@     @.@        /./         ..     @.@    ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c       @./       @..@@  /./   @...@      ..@      ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c          @..@                       @..@         ","color:gold;padding: -1em;font-size: 1.5em;");
-  console.log("%c              @...@#           @@...@             ","color:gold;padding: -1em;font-size: 1.5em;");
-
-
+  console.log(
+    "%c Creado por Rodrigo Sendino Sanz",
+    "background: #ff8906; border-radius:12%;color:#fffffe;padding: 2em;font-size: 2em;"
+  );
+  console.log(
+    "%c No olvides seguirme en redes:",
+    "color:#e53170;padding: 1.5em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c Instagram: https://www.instagram.com/rodrigosendinosanz/",
+    "color:#405DE6;padding: 1em;font-size: 1em;background: #fff;"
+  );
+  console.log(
+    "%c Twitter: https://twitter.com/rodrigosendino",
+    "color:#1DA1F2;padding: 1em;font-size: 1em;background: #fff;"
+  );
+  console.log(
+    "%c Linkedin: https://www.linkedin.com/in/rodrigo-sendino-sanz-27a3a0100/",
+    "color:#0e76a8;padding: 1em;font-size: 1em;background: #fff;"
+  );
+  console.log(
+    "%c Github: https://github.com/RodrigoSendinoSanz",
+    "color:#211F1F;padding: 1em;font-size: 1em;background: #fff;"
+  );
+  console.log(
+    "%c by Rodrigo Sendino Sanz",
+    "color:gold;padding: 1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c                     @@@@@@@                     ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c             @...@@           @@...@             ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c        @..@                       @..@         ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c     @..        @..@    /.@   @@..@      ..@      ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c   @.@     @.@         /.@         *.#    @.@    ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c  .@    ,.@            /.@            .@    (.   ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c  %..@ .@              /.@              .@   @.@ ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c       @...@           /.@               @@   @.@",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c           @....%      /.@                .@   @.",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c               &....@  /.&                 .    .",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c@.... (.............@ @...*    ..............  ...",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c@.    @&                /./....%                  ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c .@    .                /./   &....@              ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c @.     .               /./        @...@          ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c  @.&    .@             /./            @..@       ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c    .@     .@           /./            .@  @...   ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c     @.@     @.@        /./         ..     @.@    ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c       @./       @..@@  /./   @...@      ..@      ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c          @..@                       @..@         ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
+  console.log(
+    "%c              @...@#           @@...@             ",
+    "color:gold;padding: -1em;font-size: 1.5em;"
+  );
 }
