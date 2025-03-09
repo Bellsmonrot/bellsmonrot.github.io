@@ -1363,136 +1363,6 @@ footer {
     align-items: center;
   }
 
-  /* Posiciones de los números en la imagen */
-  .pos-A {
-    top: 49%;
-    left: 0%;
-  }
-  .pos-B {
-    top: 11%;
-    left: 47%;
-  }
-  .pos-C {
-    top: 50%;
-    left: 87%;
-  }
-  .pos-D {
-    top: 88%;
-    left: 46%;
-  }
-  .pos-E {
-    top: 50%;
-    left: 47%;
-  }
-  .pos-F {
-    top: 23%;
-    left: 17%;
-  }
-  .pos-G {
-    top: 24%;
-    left: 76%;
-  }
-  .pos-H {
-    top: 77%;
-    left: 18%;
-  }
-  .pos-I {
-    top: 77%;
-    left: 74%;
-  }
-  .pos-J {
-    top: 80%;
-    left: 47%;
-  }
-  .pos-K {
-    top: 25%;
-    left: 49%;
-  }
-  .pos-L {
-    top: 32%;
-    left: 26%;
-  }
-  .pos-M {
-    top: 32%;
-    left: 70%;
-  }
-  .pos-N {
-    top: 51%;
-    left: 18%;
-  }
-  .pos-O {
-    top: 51%;
-    left: 78%;
-  }
-  .pos-P {
-    top: 71%;
-    left: 27%;
-  }
-  .pos-Q {
-    top: 71%;
-    left: 69%;
-  }
-  .pos-R {
-    top: 66%;
-    left: 63%;
-  }
-  .pos-S {
-    top: 19%;
-    left: 48%;
-  }
-  .pos-T {
-    top: 84%;
-    left: 47%;
-  }
-  .pos-U {
-    top: 50%;
-    left: 13%;
-  }
-  .pos-V {
-    top: 51%;
-    left: 82%;
-  }
-  .pos-W {
-    top: 28%;
-    left: 22%;
-  }
-  .pos-X {
-    top: 28%;
-    left: 73%;
-  }
-  .pos-Y {
-    top: 74%;
-    left: 23%;
-  }
-  .pos-Z {
-    top: 74%;
-    left: 71%;
-  }
-  .pos-Cha1 {
-    top: 37%;
-    left: 48%;
-  }
-  .pos-Cha2 {
-    top: 51%;
-    left: 33%;
-  }
-  .pos-Car1 {
-    top: 58%;
-    left: 71%;
-  }
-  .pos-Car2 {
-    top: 74%;
-    left: 54%;
-  }
-  .pos-FurAnc {
-    top: 50%;
-    left: 54%;
-  }
-  .pos-Sexu {
-    top: 51%;
-    left: 60%;
-  }
-
   @media (width <= 1060px) {
     .flex-wrapper {
       display: flex;
@@ -1740,4 +1610,77 @@ footer {
   .pos-Normal {
       font-size: 0.7rem;
   }
+}
+
+@media only screen and (max-width: 768px) {
+  /* Posiciones de los números en la imagen */
+  .pos-A { top: 50%; left: 13%; }
+  .pos-B { top: 13%; left: 51%; }
+  .pos-C { top: 51%; left: 88%; }
+  .pos-D { top: 90%; left: 49%; }
+  .pos-E { top: 51%; left: 50%; }
+  .pos-F { top: 25%; left: 23%; }
+  .pos-G { top: 25%; left: 78%; }
+  .pos-H { top: 79%; left: 23%; }
+  .pos-I { top: 79%; left: 76%; }
+  .pos-J { top: 80%; left: 49%; }
+  .pos-K { top: 25%; left: 50%; }
+  .pos-L { top: 32%; left: 30%; }
+  .pos-M { top: 32%; left: 70%; }
+  .pos-N { top: 51%; left: 22%; }
+  .pos-O { top: 51%; left: 77%; }
+  .pos-P { top: 71%; left: 30%; }
+  .pos-Q { top: 71%; left: 68%; }
+  .pos-R { top: 66%; left: 63%; }
+  .pos-S { top: 19%; left: 50%; }
+  .pos-T { top: 84%; left: 49%; }
+  .pos-U { top: 51%; left: 18%; }
+  .pos-V { top: 51%; left: 81%; }
+  .pos-W { top: 29%; left: 26%; }
+  .pos-X { top: 29%; left: 72%; }
+  .pos-Y { top: 74%; left: 27%; }
+  .pos-Z { top: 74%; left: 71%; }
+  .pos-Cha1 { top: 37%; left: 50%; }
+  .pos-Cha2 { top: 51%; left: 36%; }
+  .pos-Car1 { top: 58%; left: 70%; }
+  .pos-Car2 { top: 74%; left: 55%; }
+  .pos-FurAnc { top: 51%; left: 56%; }
+  .pos-Sexu { top: 51%; left: 61%; }
+}
+
+
+@media only screen and (min-width: 768px) {
+  /* Posiciones de los números en la imagen */
+  .pos-A { top: 49%; left: 11%; }
+  .pos-B { top: 11%; left: 49%; }
+  .pos-C { top: 50%; left: 86%; }
+  .pos-D { top: 88%; left: 48%; }
+  .pos-E { top: 50%; left: 48%; }
+  .pos-F { top: 23%; left: 21%; }
+  .pos-G { top: 24%; left: 75%; }
+  .pos-H { top: 77%; left: 22%; }
+  .pos-I { top: 77%; left: 74%; }
+  .pos-J { top: 80%; left: 49%; }
+  .pos-K { top: 25%; left: 50%; }
+  .pos-L { top: 32%; left: 30%; }
+  .pos-M { top: 32%; left: 70%; }
+  .pos-N { top: 51%; left: 22%; }
+  .pos-O { top: 51%; left: 77%; }
+  .pos-P { top: 71%; left: 30%; }
+  .pos-Q { top: 71%; left: 68%; }
+  .pos-R { top: 66%; left: 63%; }
+  .pos-S { top: 19%; left: 50%; }
+  .pos-T { top: 84%; left: 49%; }
+  .pos-U { top: 50%; left: 17%; }
+  .pos-V { top: 51%; left: 81%; }
+  .pos-W { top: 28%; left: 25%; }
+  .pos-X { top: 29%; left: 72%; }
+  .pos-Y { top: 74%; left: 27%; }
+  .pos-Z { top: 74%; left: 71%; }
+  .pos-Cha1 { top: 37%; left: 50%; }
+  .pos-Cha2 { top: 51%; left: 36%; }
+  .pos-Car1 { top: 58%; left: 70%; }
+  .pos-Car2 { top: 74%; left: 55%; }
+  .pos-FurAnc { top: 50%; left: 55%; }
+  .pos-Sexu { top: 51%; left: 61%; }
 }
