@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Evitar clic derecho en toda la página
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
-        alert('Bellsmonrot Tarot🎃🔮💀 Contenido Oficial https://bellsmonrot.github.io/');
     });
 
     // Evitar arrastrar imágenes
@@ -419,7 +418,7 @@ document.addEventListener('DOMContentLoaded', () => {
       './img/tarot/lunatarot.jpg',
       './img/tarot/soltarot.jpg',
       './img/tarot/estellatarot.jpg',
-      './img/tarot/juicioatarot.jpg',
+      './img/tarot/juiciotarot.jpg',
       './img/tarot/mundotarot.jpg',
   ];
 
