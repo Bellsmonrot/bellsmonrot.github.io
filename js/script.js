@@ -5,6 +5,27 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
+
+    // Evitar clic derecho en toda la página
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        alert('Bellsmonrot Tarot🎃🔮💀 Contenido Oficial https://bellsmonrot.github.io/');
+    });
+
+    // Evitar arrastrar imágenes
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+
+    // Evitar Ctrl+S, Ctrl+U y Ctrl+Shift+I (Guardar, Ver Código Fuente, DevTools)
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 's' || e.key === 'u' || e.key === 'Shift' && e.key === 'I')) {
+            e.preventDefault();
+            alert('Bellsmonrot Tarot🎃🔮💀 Contenido Oficial https://bellsmonrot.github.io/');
+        }
+    });
   // Header scroll effect
   const header = document.querySelector("header");
 
@@ -387,7 +408,19 @@ document.addEventListener('DOMContentLoaded', () => {
       './img/tarot/loverstarot.jpg',
       './img/tarot/carrotarot.jpg',
       './img/tarot/fuerzatarot.jpg',
-      './img/tarot/ermitanotarot.jpg'
+      './img/tarot/ermitanotarot.jpg',
+      './img/tarot/justiciatarot.jpg',
+      './img/tarot/torretarot.jpg',
+      './img/tarot/ruedatarot.jpg',
+      './img/tarot/colgadotarot.jpg',
+      './img/tarot/muertetarot.jpg',
+      './img/tarot/templanzatarot.jpg',
+      './img/tarot/diablotarot.jpg',
+      './img/tarot/lunatarot.jpg',
+      './img/tarot/soltarot.jpg',
+      './img/tarot/estellatarot.jpg',
+      './img/tarot/juicioatarot.jpg',
+      './img/tarot/mundotarot.jpg',
   ];
 
   function changeImage() {
